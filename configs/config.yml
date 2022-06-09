@@ -1,0 +1,51 @@
+
+# port 端口
+# e.g :80
+port: :8080
+
+# model 模式 debug|release
+# debug模式，可以输出更加详细的日志，但是运行速度会减慢
+model: debug
+
+# geoIP IP解析库
+# https://www.maxmind.com/en/geoip2-city
+geoIP: ../GeoLite2-City.mmdb
+
+#  -------------------- handler --------------------
+handler: 
+  # topic kafka topic
+  topic:
+    - audit-log
+  # group kafka group
+  group: audit
+  numOfProcessor: 3
+  buffer: 100
+
+
+#  -------------------- log --------------------
+# comply with zap log specification
+log:
+  level: 0
+  development: false
+  sampling:
+    initial: 100
+    thereafter: 100
+  outputPath:
+    - stderr
+  errorOutputPath:
+    - stderr
+
+# -------------------- elastic --------------------
+elastic:
+  host:
+    - http://192.168.200.18:9200
+    - http://192.168.200.19:9200
+    - http://192.168.200.20:9200
+  log: true
+
+# -------------------- kafka --------------------
+kafka:
+  broker:
+    - 192.168.200.20:9092
+    - 192.168.200.19:9092
+    - 192.168.200.18:9092
