@@ -9,6 +9,7 @@ import (
 	"strings"
 
 	"github.com/Shopify/sarama"
+	"github.com/oschwald/geoip2-golang"
 	"github.com/quanxiang-cloud/audit/internal/models"
 	"github.com/quanxiang-cloud/audit/internal/models/es"
 	"github.com/quanxiang-cloud/audit/pkg/client"

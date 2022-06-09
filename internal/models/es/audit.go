@@ -3,6 +3,7 @@ package es
 import (
 	"context"
 	"encoding/json"
+	"github.com/olivere/elastic/v7"
 
 	"github.com/quanxiang-cloud/audit/internal/models"
 )
